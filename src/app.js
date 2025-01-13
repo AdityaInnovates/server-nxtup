@@ -12,3 +12,8 @@ app.listen(PORT,()=>{
     console.log(`Running at ${PORT}`)
 })
 
+const clubRoutes = require('./controllers/clubController')
+const eventsRoutes = require('./controllers/eventsController')
+
+app.use('/clubs',clubRoutes)
+app.use('/events',eventsRoutes)
