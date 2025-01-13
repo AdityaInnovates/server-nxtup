@@ -1,19 +1,18 @@
-const Clubs  = require('../models/clubModel');
+const Clubs = require('../models/clubModel');
 const express = require('express');
-const router = require('./eventsController');
+const router = express.Router(); 
 
 const fetchClubs = async (req, res) => {
     try {
         const clubs = await Clubs.find({});
 
         if (clubs.length > 0) {
-          return res.status(200).json({
+            return res.status(200).json({
                 success: true,
                 data: clubs,
             });
         } else {
-
-          return res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: "No clubs found.",
             });
@@ -27,5 +26,7 @@ const fetchClubs = async (req, res) => {
         });
     }
 };
+
 router.get('/', fetchClubs);
+
 module.exports = router;

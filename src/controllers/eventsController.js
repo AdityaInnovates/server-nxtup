@@ -27,7 +27,6 @@ const fetchEvents = async (req, res) => {
     }
 };
 
-// Attach the fetchEvents function to the router
 router.get('/', fetchEvents);
 
 module.exports = router;
