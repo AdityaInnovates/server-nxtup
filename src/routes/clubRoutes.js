@@ -1,5 +1,5 @@
 const express = require("express");
-const {fetchClubs} = require("../controllers/clubController"); 
+const fetchClubs = require("../controllers/clubController");
 const router = express.Router();
 
 

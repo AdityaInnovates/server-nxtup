@@ -1,13 +1,18 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const clubsSchema = new mongoose.Schema({
-    President:String,
-    VicePresident:String,
-    CoreMembers:Object,
-    Description:String,
-    Images:String
+  President: { type: String, required: true },
+  VicePresident: { type: String, required: true },
+  CoreMembers: { 
+    type: Map, 
+    of: String, 
+    default: {}, 
+    required: true 
+  },
+  Description: { type: String, required: true },
+  Images: { type: String, required: true }
 });
 
-const club = mongoose.model("club", clubsSchema);
+const Club = mongoose.model("Club", clubsSchema);
 
-module.exports = club;
+module.exports = Club;

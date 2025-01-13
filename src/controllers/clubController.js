@@ -27,6 +27,7 @@ const fetchClubs = async (req, res) => {
     }
 };
 
+
 router.get('/', fetchClubs);
 
 module.exports = router;

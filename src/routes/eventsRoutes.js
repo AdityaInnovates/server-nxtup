@@ -1,5 +1,5 @@
 const express = require("express");
-const { fetchEvents } = require('../controllers/eventsController')
+const fetchEvents = require('../controllers/eventsController')
 const router = express.Router();
 
 router.get('/', fetchEvents);

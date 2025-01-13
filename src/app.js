@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-
+const db = require('../config/db')
 
 app.use(express.json());
 
@@ -11,9 +11,8 @@ app.get('/', (req, res) => {
 });
 
 
-const clubRoutes = require('./controllers/clubController');
-const eventsRoutes = require('./controllers/eventsController');
-
+const clubRoutes = require('./routes/clubRoutes'); 
+const eventsRoutes = require('./routes/eventsRoutes');
 
 app.use('/clubs', clubRoutes);
 app.use('/events', eventsRoutes);
