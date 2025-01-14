@@ -13,10 +13,11 @@ app.get('/', (req, res) => {
 
 const clubRoutes = require('./routes/clubRoutes'); 
 const eventsRoutes = require('./routes/eventsRoutes');
+const submitRoutes = require('./routes/submitRoutes');
 
 app.use('/clubs', clubRoutes);
 app.use('/events', eventsRoutes);
-
+app.use('/submits', submitRoutes);
 
 const PORT = process.env.PORT || 5555;
 
